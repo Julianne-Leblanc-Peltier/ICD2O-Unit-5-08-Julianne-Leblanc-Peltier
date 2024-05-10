@@ -9,14 +9,24 @@ function myButtonClicked() {
   const secondNumber = parseInt(document.getElementById("second-number").value)
   let remainder = firstNumber
   let counter = 0
+  let output = ""
+  document.getElementById("output").innerHTML = null
+  document.getElementById("answer").innerHTML = null
 
-  while (true) {
-    remainder -= secondNumber
-    counter ++
-    if (remainder < secondNumber) {
-      break
+
+  if (firstNumber == 0 && secondNumber == 0) {
+    document.getElementById("answer").innerHTML = "Invalid! 0 cannot be divided by 0!"
+  } else {
+    while (true) {
+      if (remainder < secondNumber) {
+        break
+      }
+      output += remainder + " - " + secondNumber + " = " + (remainder - secondNumber) + "</br>"
+      remainder -= secondNumber
+      counter ++
     }
-  }
 
-  document.getElementById("answer").innerHTML = counter + " R" + remainder
+    document.getElementById("output").innerHTML = output
+    document.getElementById("answer").innerHTML = "therefore " + firstNumber + " / " + secondNumber + " = " + counter + " R" + remainder
+  }
 }
