@@ -4,6 +4,18 @@
 // Created on: May 2024
 // This file contains the JS functions for index.html
 
+"use strict"
+
+/**
+ * Check service worker.
+ */
+if (navigator.serviceWorker) {
+  navigator.serviceWorker.register("/ICD2O-Unit-5-08-Julianne-Leblanc-Peltier/sw.js", {
+    scope: "/ICD2O-Unit-5-08-Julianne-Leblanc-Peltier/",
+  })
+}
+
+
 function myButtonClicked() {
   const firstNumber = parseInt(document.getElementById("first-number").value)
   const secondNumber = parseInt(document.getElementById("second-number").value)
